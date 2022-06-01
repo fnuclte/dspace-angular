@@ -1,0 +1,30 @@
+# This image will be published as dspace/dspace-angular
+# See https://github.com/DSpace/dspace-angular/tree/main/docker for usage details
+
+# Builder image
+FROM node:16-alpine as builder
+ENV NODE_ENV development
+
+WORKDIR /app
+
+COPY . .
+
+# Run yarn install with an increased network timeout (5min) to avoid "ESOCKETTIMEDOUT" errors from hub.docker.com
+# See, for example https://github.com/yarnpkg/yarn/issues/5540
+RUN yarn install --network-timeout 300000 && \
+  yarn build:prod
+
+
+
+# Production image
+FROM node:16-alpine
+ENV NODE_ENV production
+
+WORKDIR /app
+
+COPY --from=builder /app/dist /app/dist
+COPY --from=builder /app/config /app/config
+COPY --from=builder /app/package.json /app/yarn.lock /app/
+
+RUN yarn install --production --frozen-lockfile --network-timeout 300000
+CMD ["node", "dist/server/main"]
