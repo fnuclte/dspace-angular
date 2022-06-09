@@ -4,17 +4,17 @@ ui:
   port: 4000
   nameSpace: /
 
-rest:
-  ssl: true
-  host: api7.dspace.org
-  port: 443
-  nameSpace: /server
-
 # rest:
 #   ssl: true
-#   host: open.fnu.ac.fj
+#   host: api7.dspace.org
 #   port: 443
 #   nameSpace: /server
+
+rest:
+  ssl: true
+  host: open.fnu.ac.fj
+  port: 443
+  nameSpace: /server
 
 # Caching settings
 cache:
