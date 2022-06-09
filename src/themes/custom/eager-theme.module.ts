@@ -17,9 +17,7 @@ import { FooterComponent } from './app/footer/footer.component';
  * Add components that use a custom decorator to ENTRY_COMPONENTS as well as DECLARATIONS.
  * This will ensure that decorator gets picked up when the app loads
  */
-const ENTRY_COMPONENTS = [
-  PublicationComponent,
-];
+const ENTRY_COMPONENTS = [PublicationComponent];
 
 const DECLARATIONS = [
   ...ENTRY_COMPONENTS,
@@ -41,9 +39,7 @@ const DECLARATIONS = [
     ItemPageModule,
   ],
   declarations: DECLARATIONS,
-  providers: [
-    ...ENTRY_COMPONENTS.map((component) => ({ provide: component }))
-  ],
+  providers: [...ENTRY_COMPONENTS.map((component) => ({ provide: component }))],
 })
 /**
  * This module is included in the main bundle that gets downloaded at first page load. So it should
@@ -54,5 +50,4 @@ const DECLARATIONS = [
  *
  * Themed EntryComponents should also be added here
  */
-export class EagerThemeModule {
-}
+export class EagerThemeModule {}
