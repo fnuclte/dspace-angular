@@ -1632,7 +1632,7 @@
 
   "home.breadcrumbs": "Home",
 
-  "home.search-form.placeholder": "Search the repository... Enter the course code for more refined search",
+  "home.search-form.placeholder": "Enter the course code for more refined search results",
 
   "home.title": "Home",
 
@@ -3164,9 +3164,9 @@
 
   "repository.image.logo": "Repository logo",
 
-  "repository.title.prefix": "DSpace Angular :: ",
+  "repository.title.prefix": "FNUOER :: ",
 
-  "repository.title.prefixDSpace": "DSpace Angular ::",
+  "repository.title.prefixDSpace": "FNUOER ::",
 
 
   "resource-policies.add.button": "Add",
