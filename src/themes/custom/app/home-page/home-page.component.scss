@@ -13,7 +13,7 @@
 
 .oer-toolkit-list {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   gap: 1rem;
 }
 
@@ -30,4 +30,22 @@
 
 .oer-toolkit-list > a p {
   color: #646464;
+}
+
+@include media-breakpoint-up(sm) {
+  .oer-toolkit-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .oer-toolkit-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .oer-toolkit-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }

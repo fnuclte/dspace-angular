@@ -81,15 +81,34 @@
   }
 
   .jumbotron > div {
-    height: 65vh
+    height: 65vh;
   }
 
-  .jumbotron > div > div {
-    padding-bottom: 14rem;
+  .jumbotron h1 {
+    text-align: center;
+    font-size: 2rem;
   }
 
   .jumbotron .lead {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
+  }
+
+  .jumbotron > div > div {
+    padding-bottom: 0;
+  }
+
+  @include media-breakpoint-up(sm) {
+    .jumbotron h1 {
+      font-size: 3rem;
+    }
+
+    .jumbotron .lead {
+      font-size: 1.4rem;
+    }
+
+    .jumbotron > div > div {
+      padding-bottom: 14rem;
+    }
   }
 
   @include media-breakpoint-up(md) {
